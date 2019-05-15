@@ -19,7 +19,7 @@
  	HTTP protocol that sends the appropriate temperature.
   
   
-  Done for EE250 at the University of Southern California
+  Done for EE250 at the University of Southern California.
   a Raspberry Pi with a GrovePi kit is required for this. simply run python3 thermostat.py to use. 
 
 
