@@ -34,52 +34,12 @@ To build the IoT Thermostat you’ll be using the following components:
 Rotary Angle Sensor
 	Buzzer
 	Button
+
 	
-     
-Figure 1. Required inputs and outputs
-4.	User Interface
-The IoT thermostat has three primary views, namely (a) the Default View, which is what appears on startup; (b) the Outdoor View, which shows the outside temperature; and (c) the Edit View, which is used to set the desired indoor temperature. Implement the three views as follows.
-Default View
 
-T	e	m	p	:			7	2	F					A	C
-D	e	s	i	r	e	d	:			7	0	F			
-Figure 2: Default View
-
-This view shows the indoor temperature, the desired temperature, and the mode. See the Fields section for formatting details and the list of modes.
-
-Outdoor View
-
-T	e	m	p	:			7	2	F					A	C
-O	u	t	d	o	o	r	:			7	7	F			
-Figure 3: Outdoor View
-
-This view shows the indoor temperature, the outdoor temperature, and the mode. See the Fields section for formatting details and the list of modes.
-
-Edit View
-
-S	e	t		T	e	m	p	:			7	0	F		
-															
-Figure 4: Edit View
-
-This view allows the user to set the desired temperature using the rotary angle sensor. See the Fields section for formatting details.
-
-Fields
-Blue: Indoor temperature in degrees Fahrenheit, as measured by temperature sensor. three-digits, right-aligned, space padded, integer
-
-Purple: Outdoor temperature in degrees Fahrenheit, obtained through a RESTful weather API. three-digits, right-aligned, space padded, integer
-
-Green: Desired temperature, set by user using rotary angle sensor. The configurable range is [60, 100] degrees Fahrenheit. Must be saved across restarts. 
-three-digits, right-aligned, space padded, integer. 
-
-Red: HVAC mode: {AC, Heat, Wind, or Fan}. right-aligned, space padded
-AC - air conditioning is on
-Heat - heater is on
-Wind - windows have been opened
-Fan - fan only
 
 State Machine
- 
-Figure 5: View State Machine
+
 
 The user switches between the views by pushing the button. When transitioning from the Edit View to the Default View, the desired temperature chosen by the user should be saved and backed up to a file. If the thermostat is restarted, the desired temperature should be restored.
 
